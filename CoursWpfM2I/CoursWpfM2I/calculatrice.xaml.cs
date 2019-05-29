@@ -92,6 +92,7 @@ namespace CoursWpfM2I
         private void ClickBouton(object sender, EventArgs e)
         {
             Button b = sender as Button;
+            MessageBox.Show("X:" + Grid.GetColumn(b) + " Y : " + Grid.GetRow(b));
             string valueButton = b.Content.ToString();
             double valueNumber;
             if(Double.TryParse(valueButton, out valueNumber))
