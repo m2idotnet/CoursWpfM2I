@@ -20,6 +20,11 @@ namespace CoursWpfM2I
     public partial class calculatrice : Window
     {
         public Grid maGrille;
+        public Label monLabel;
+        public bool newOperation = true;
+        public string operation = null;
+        public double lastValue;
+        public bool isPourcentage = false;
         public calculatrice()
         {
             InitializeComponent();
@@ -36,7 +41,7 @@ namespace CoursWpfM2I
                     maGrille.ColumnDefinitions.Add(new ColumnDefinition { Width = largeur });
                 }
             }
-            Label l = new Label
+            monLabel = new Label
             {
                 Content = "0",
                 Background = Brushes.Black,
@@ -45,10 +50,10 @@ namespace CoursWpfM2I
                 VerticalContentAlignment = VerticalAlignment.Bottom,
                 FontSize = 50
             };
-            maGrille.Children.Add(l);
-            Grid.SetColumn(l, 0);
-            Grid.SetRow(l, 0);
-            Grid.SetColumnSpan(l, 4);
+            maGrille.Children.Add(monLabel);
+            Grid.SetColumn(monLabel, 0);
+            Grid.SetRow(monLabel, 0);
+            Grid.SetColumnSpan(monLabel, 4);
             int x = 1, y = 0;
             foreach(string c in tabElement)
             {
@@ -56,6 +61,7 @@ namespace CoursWpfM2I
                 {
                     Content = c
                 };
+                b.Click += ClickBouton;
                 maGrille.Children.Add(b);
                 Grid.SetRow(b, x);
                 Grid.SetColumn(b, y);
@@ -81,6 +87,130 @@ namespace CoursWpfM2I
                 }
             }
             Content = maGrille;
+        }
+
+        private void ClickBouton(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            string valueButton = b.Content.ToString();
+            double valueNumber;
+            if(Double.TryParse(valueButton, out valueNumber))
+            {
+                if (newOperation)
+                {
+                    monLabel.Content = valueNumber;
+                    newOperation = false;
+                }
+                else
+                {
+                    monLabel.Content += valueNumber.ToString();
+                }
+            }
+            else
+            {
+                switch(valueButton)
+                {
+                    case "+":
+                        if(operation == null)
+                        {
+                            lastValue = Convert.ToDouble(monLabel.Content); 
+                        }
+                        else
+                        {
+                            MakeOperation();
+                        }
+                        operation = "+";
+                        newOperation = true;
+                        break;
+                    case "-":
+                        if (operation == null)
+                        {
+                            lastValue = Convert.ToDouble(monLabel.Content);
+                        }
+                        else
+                        {
+                            MakeOperation();
+                        }
+                        operation = "-";
+                        newOperation = true;
+                        break;
+                    case "X":
+                        if (operation == null)
+                        {
+                            lastValue = Convert.ToDouble(monLabel.Content);
+                        }
+                        else
+                        {
+                            MakeOperation();
+                        }
+                        operation = "X";
+                        newOperation = true;
+                        break;
+                    case "%":
+                        isPourcentage = true;
+                        break;
+                    case "/":
+                        if (operation == null)
+                        {
+                            lastValue = Convert.ToDouble(monLabel.Content);
+                        }
+                        else
+                        {
+                            MakeOperation();
+                        }
+                        operation = "/";
+                        newOperation = true;
+                        break;
+                    case "=":
+                        if(operation != null)
+                        {
+                            MakeOperation();
+                            newOperation = true;
+                            lastValue = 0;
+                        }
+                        break;
+                    case "C":
+                        monLabel.Content = "0";
+                        newOperation = true;
+                        operation = null;
+                        break;
+                    case "+/-":
+                        monLabel.Content = (Convert.ToDouble(monLabel.Content) * -1).ToString();
+                        break;
+                    case ",":
+                        if (!monLabel.Content.ToString().Contains(","))
+                        {
+                            monLabel.Content += ",";
+                            newOperation = false;
+                        }
+                        break;
+                }
+            }
+        } 
+        
+        private void MakeOperation()
+        {
+            double value2 = (isPourcentage) ? lastValue / Convert.ToDouble(monLabel.Content) : Convert.ToDouble(monLabel.Content);
+            switch (operation)
+            {
+                case "+":
+                    lastValue = lastValue + value2;
+                    monLabel.Content = lastValue.ToString();
+                    break;
+                case "-":
+                    lastValue = lastValue - value2;
+                    monLabel.Content = lastValue.ToString();
+                    break;
+                case "X":
+                    lastValue = lastValue * value2;
+                    monLabel.Content = lastValue.ToString();
+                    break;
+                case "/":
+                    lastValue = lastValue / value2;
+                    monLabel.Content = lastValue.ToString();
+                    break;
+            }
+            isPourcentage = false;
         }
     }
 }
