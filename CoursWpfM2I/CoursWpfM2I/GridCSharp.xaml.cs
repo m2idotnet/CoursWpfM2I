@@ -48,10 +48,20 @@ namespace CoursWpfM2I
                 Content = "Click",
                 Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDA6767"))
             };
+            b.Click += (sender, e) =>
+             {
+                 MessageBox.Show((sender as Button).Content.ToString());
+             };
+            b.Click += ClickMethod;
             maGrille.Children.Add(b);
             Grid.SetColumn(b, 0);
             Grid.SetRow(b, 0);
             Content = maGrille;
+        }
+
+        private void ClickMethod(object sender, EventArgs e)
+        {
+            MessageBox.Show((sender as Button).Content.ToString());
         }
     }
 }

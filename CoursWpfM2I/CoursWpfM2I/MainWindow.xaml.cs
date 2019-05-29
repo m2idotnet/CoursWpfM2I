@@ -25,5 +25,12 @@ namespace CoursWpfM2I
             InitializeComponent();
             monBouton.Content = "New Content";
         }
+
+        public void MaMethodeClick(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            MessageBox.Show("Bonjour tout le monde " + b.Content);
+            b.Content = "new Contenu";
+        }
     }
 }
