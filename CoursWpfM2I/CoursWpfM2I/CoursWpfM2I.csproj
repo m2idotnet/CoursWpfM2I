@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Impot.xaml.cs">
+      <DependentUpon>Impot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Taquin.xaml.cs">
       <DependentUpon>Taquin.xaml</DependentUpon>
     </Compile>
@@ -62,6 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GridCSharp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

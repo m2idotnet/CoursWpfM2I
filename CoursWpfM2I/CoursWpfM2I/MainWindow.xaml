@@ -8,16 +8,21 @@
         Title="First Window" Height="498.4" Width="490.4">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="monBouton" Content="Click"   Background="#FFDA6767" BorderBrush="#FFE8DEDE" Foreground="White" FontSize="20" Click="MaMethodeClick"/>
-        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="monBouton2" Content="Click 2"   Background="#FFDA6767" BorderBrush="#FFE8DEDE" Foreground="White" FontSize="20" Click="MaMethodeClick"/>
-
+        <RadioButton x:Name="q1oui" Content="oui" GroupName="Q1" />
+        <RadioButton x:Name="q1non" Content="non" GroupName="Q1" Grid.ColumnSpan="2" Margin="72,0,170,0.4" />
+        <RadioButton x:Name="q2oui" GroupName="Q2" Grid.ColumnSpan="2" Margin="0,25,242,209.8" Grid.RowSpan="2" >
+            
+        </RadioButton>
+        <RadioButton x:Name="q2non" Content="non2" GroupName="Q2" Grid.ColumnSpan="2" Margin="72,25,170,209.8" Grid.RowSpan="2" />
+        <TextBox x:Name="text1" Margin="10,48,48.6,106.4" />
+        <Button Content="Button" Width="75" Height="22" RenderTransformOrigin="0.593,3.368" Click="Button_Click"/>
     </Grid>
 
 </Window>

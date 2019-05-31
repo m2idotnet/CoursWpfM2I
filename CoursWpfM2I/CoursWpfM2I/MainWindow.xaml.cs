@@ -23,14 +23,20 @@ namespace CoursWpfM2I
         public MainWindow()
         {
             InitializeComponent();
-            monBouton.Content = "New Content";
+            //monBouton.Content = "New Content";
         }
 
-        public void MaMethodeClick(object sender, EventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button b = sender as Button;
-            MessageBox.Show("Bonjour tout le monde " + b.Content);
-            b.Content = "new Contenu";
+            MessageBox.Show(q1non.IsChecked.ToString());
+            MessageBox.Show(text1.Text);
         }
+
+        //public void MaMethodeClick(object sender, EventArgs e)
+        //{
+        //    Button b = sender as Button;
+        //    MessageBox.Show("Bonjour tout le monde " + b.Content);
+        //    b.Content = "new Contenu";
+        //}
     }
 }
