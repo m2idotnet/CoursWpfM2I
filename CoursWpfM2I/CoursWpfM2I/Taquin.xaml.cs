@@ -21,6 +21,7 @@ namespace CoursWpfM2I
     {
         public int nb = 3;
         private string ChaineWin = "ABCDEFGH";
+        private int nbClick = 0;
         public string[] tabElement = new string[] { "A", "B", "C", "D", "E", "F", "G", "H" };
         public Taquin()
         {
@@ -45,6 +46,7 @@ namespace CoursWpfM2I
 
         public void GenerateButton()
         {
+            nbClick = 0;
             grilleTaquin.Children.Clear();
             grilleTaquin.RowDefinitions.Clear();
             grilleTaquin.ColumnDefinitions.Clear();
@@ -98,6 +100,8 @@ namespace CoursWpfM2I
             {
                 Grid.SetColumn(b, x + 1);
             }
+            nbClick++;
+            monLabel.Content = "Nbre de déplacement : " + nbClick;
             if (testWin())
             {
                 MessageBox.Show("Bravo");
@@ -122,26 +126,20 @@ namespace CoursWpfM2I
         {
             bool test = false;
             string chaineTest = "";
-            int x = 0, y = 0;
-            while(x < 2 && y < 2)
+            //int x = 0, y = 0;
+
+            for(int x = 0; x <= 2; x++)
             {
-                foreach (Button element in grilleTaquin.Children)
+                for(int y=0; y <= 2; y++)
                 {
-                    if (Grid.GetColumn(element) == x && Grid.GetRow(element) == y)
+                    UIElement e = grilleTaquin.Children.Cast<UIElement>().FirstOrDefault(element => Grid.GetColumn(element) == y && Grid.GetRow(element) == x);
+                    if(e != null)
                     {
-                        chaineTest += element.Content.ToString();
-                    }
-                    if ((x + 1) % 3 == 0)
-                    {
-                        y++;
-                        x = 0;
-                    }
-                    else
-                    {
-                        x++;
+                        chaineTest += (e as Button).Content.ToString();
                     }
                 }
             }
+            
             
             if(chaineTest == ChaineWin)
             {
