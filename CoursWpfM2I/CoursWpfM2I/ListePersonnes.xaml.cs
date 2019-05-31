@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,21 @@ namespace CoursWpfM2I
         public ListePersonnes()
         {
             InitializeComponent();
-            maListe = new ObservableCollection<Personne>() { new Personne { Nom = "toto", Prenom="tata", Tel="06060606060"}, new Personne { Nom = "titi", Prenom = "Minet", Tel = "06060606060" } };
+            maListe = new ObservableCollection<Personne>();
+            SqlConnection connection = new SqlConnection(@"Data Source=(localDb)\CoursAdoNet;Integrated Security=True");
+            SqlCommand command = new SqlCommand("SELECT * FROM Client", connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Personne p = new Personne
+                {
+                    Nom = reader.GetString(1),
+                    Prenom = reader.GetString(2),
+                    Tel = reader.GetString(3),
+                };
+                maListe.Add(p);
+            }
             maListeView.ItemsSource = maListe;
         }
 
