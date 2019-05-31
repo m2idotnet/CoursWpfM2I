@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CoursWpfM2I
 {
@@ -20,8 +20,9 @@ namespace CoursWpfM2I
     public partial class Taquin : Window
     {
         public int nb = 3;
-        private string ChaineWin = "ABCDEFGH";
+        private string ChaineWin = "ABCDEFGH#";
         private int nbClick = 0;
+       
         public string[] tabElement = new string[] { "A", "B", "C", "D", "E", "F", "G", "H" };
         public Taquin()
         {
@@ -30,6 +31,20 @@ namespace CoursWpfM2I
              {
                  GenerateButton();
              };
+            //Création du dispatcherTimer pour incrementer nombre de second
+            DispatcherTimer di = new DispatcherTimer();
+            //definition de l'interval => toutes les secondes
+            di.Interval = new TimeSpan(0, 0, 1);
+            //Seconde de départ
+            int second = 0;
+            //Event Tick à chaque interval
+            di.Tick += new EventHandler((sender, e) =>
+            {
+                //Incremente les secondes à chaque tick
+                second++;
+                monLabel.Content = second;
+            });
+            di.Start();
         }
 
         public void Shuffle(string[] tab)
@@ -47,6 +62,7 @@ namespace CoursWpfM2I
         public void GenerateButton()
         {
             nbClick = 0;
+            monLabel.Content = "Nbre de déplacement : " + nbClick;
             grilleTaquin.Children.Clear();
             grilleTaquin.RowDefinitions.Clear();
             grilleTaquin.ColumnDefinitions.Clear();
@@ -126,8 +142,6 @@ namespace CoursWpfM2I
         {
             bool test = false;
             string chaineTest = "";
-            //int x = 0, y = 0;
-
             for(int x = 0; x <= 2; x++)
             {
                 for(int y=0; y <= 2; y++)
@@ -136,6 +150,10 @@ namespace CoursWpfM2I
                     if(e != null)
                     {
                         chaineTest += (e as Button).Content.ToString();
+                    }
+                    else
+                    {
+                        chaineTest += "#";
                     }
                 }
             }
