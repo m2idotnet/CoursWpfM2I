@@ -20,6 +20,7 @@ namespace CoursWpfM2I
     public partial class Taquin : Window
     {
         public int nb = 3;
+        private string ChaineWin = "ABCDEFGH";
         public string[] tabElement = new string[] { "A", "B", "C", "D", "E", "F", "G", "H" };
         public Taquin()
         {
@@ -60,6 +61,7 @@ namespace CoursWpfM2I
                 {
                     Content = c
                 };
+                b.Click += ClickBouton;
                 grilleTaquin.Children.Add(b);
                 Grid.SetColumn(b, y);
                 Grid.SetRow(b, x);
@@ -73,6 +75,79 @@ namespace CoursWpfM2I
                     y++;
                 }
             }
+        }
+
+        private void ClickBouton(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            int x = Grid.GetColumn(b);
+            int y = Grid.GetRow(b);
+            if (TestDeplacement(x, y + 1) && y+1 < 3)
+            {
+                Grid.SetRow(b,y + 1);
+            }
+            else if(TestDeplacement(x, y-1) && y-1 >=0)
+            {
+                Grid.SetRow(b, y - 1);
+            }
+            else if(TestDeplacement(x-1, y) && x-1  >=0)
+            {
+                Grid.SetColumn(b, x - 1);
+            }
+            else if(TestDeplacement(x+1, y) && x+1 < 3)
+            {
+                Grid.SetColumn(b, x + 1);
+            }
+            if (testWin())
+            {
+                MessageBox.Show("Bravo");
+            }
+        }
+
+        private bool TestDeplacement(int x, int y)
+        {
+            bool test = true;
+            foreach(UIElement element in grilleTaquin.Children)
+            {
+                if(Grid.GetRow(element) == y && Grid.GetColumn(element) == x)
+                {
+                    test = false;
+                    break;
+                }
+            }
+            return test;
+        }
+
+        private bool testWin()
+        {
+            bool test = false;
+            string chaineTest = "";
+            int x = 0, y = 0;
+            while(x < 2 && y < 2)
+            {
+                foreach (Button element in grilleTaquin.Children)
+                {
+                    if (Grid.GetColumn(element) == x && Grid.GetRow(element) == y)
+                    {
+                        chaineTest += element.Content.ToString();
+                    }
+                    if ((x + 1) % 3 == 0)
+                    {
+                        y++;
+                        x = 0;
+                    }
+                    else
+                    {
+                        x++;
+                    }
+                }
+            }
+            
+            if(chaineTest == ChaineWin)
+            {
+                test = true;
+            }
+            return test;
         }
     }
 }
