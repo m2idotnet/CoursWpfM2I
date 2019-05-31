@@ -18,11 +18,12 @@
         <RadioButton x:Name="q1oui" Content="oui" GroupName="Q1" />
         <RadioButton x:Name="q1non" Content="non" GroupName="Q1" Grid.ColumnSpan="2" Margin="72,0,170,0.4" />
         <RadioButton x:Name="q2oui" GroupName="Q2" Grid.ColumnSpan="2" Margin="0,25,242,209.8" Grid.RowSpan="2" >
-            
+
         </RadioButton>
         <RadioButton x:Name="q2non" Content="non2" GroupName="Q2" Grid.ColumnSpan="2" Margin="72,25,170,209.8" Grid.RowSpan="2" />
         <TextBox x:Name="text1" Margin="10,48,48.6,106.4" />
         <Button Content="Button" Width="75" Height="22" RenderTransformOrigin="0.593,3.368" Click="Button_Click"/>
+        <Button Content="Calcule Impot" Grid.Column="1" HorizontalAlignment="Left" Margin="55.4,48,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_1"/>
     </Grid>
 
 </Window>

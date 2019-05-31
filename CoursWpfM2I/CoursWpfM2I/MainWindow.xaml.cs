@@ -32,6 +32,16 @@ namespace CoursWpfM2I
             MessageBox.Show(text1.Text);
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Impot windowImpot = new Impot();
+            this.Closing += (s, ev) =>
+            {
+                ev.Cancel = true;
+            };
+            windowImpot.Show();
+        }
+
         //public void MaMethodeClick(object sender, EventArgs e)
         //{
         //    Button b = sender as Button;
