@@ -21,7 +21,7 @@
 
         <TextBox x:Name="salaireAnnuel" Grid.Row="0" Grid.Column="1"></TextBox>
         <RadioButton x:Name="rbOui" Content="Oui" GroupName="marie" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="222" VerticalAlignment="Center"></RadioButton>
-        <RadioButton x:Name="rbNon" Content="Non" GroupName="marie" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" ></RadioButton>
+        <RadioButton x:Name="rbNon" IsChecked="true" Content="Non" GroupName="marie" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" ></RadioButton>
         <TextBox x:Name="nbEnfant" Grid.Row="2" Grid.Column="1"></TextBox>
 
         <Label Content="Salaire annuel" FontSize="30" Grid.Row="0" Grid.Column="0"></Label>
