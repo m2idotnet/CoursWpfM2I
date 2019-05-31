@@ -35,10 +35,6 @@ namespace CoursWpfM2I
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Impot windowImpot = new Impot();
-            this.Closing += (s, ev) =>
-            {
-                ev.Cancel = true;
-            };
             windowImpot.Show();
         }
 

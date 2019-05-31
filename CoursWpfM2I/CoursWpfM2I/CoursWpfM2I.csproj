@@ -54,13 +54,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Personne.cs" />
+    <Compile Include="DetailInfo.xaml.cs">
+      <DependentUpon>DetailInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Impot.xaml.cs">
       <DependentUpon>Impot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaisirInfo.xaml.cs">
+      <DependentUpon>SaisirInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Taquin.xaml.cs">
       <DependentUpon>Taquin.xaml</DependentUpon>
     </Compile>
     <Page Include="calculatrice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetailInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,6 +101,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SaisirInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Taquin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
