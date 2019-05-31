@@ -61,6 +61,9 @@
     <Compile Include="Impot.xaml.cs">
       <DependentUpon>Impot.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListePersonnes.xaml.cs">
+      <DependentUpon>ListePersonnes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SaisirInfo.xaml.cs">
       <DependentUpon>SaisirInfo.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Impot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListePersonnes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
