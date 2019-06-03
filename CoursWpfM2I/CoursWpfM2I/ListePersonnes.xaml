@@ -8,13 +8,21 @@
         Title="Liste Personnes" Height="491.071" Width="542.857">
     <Grid>
         <ListView x:Name="maListeView" HorizontalAlignment="Left" Height="343" Margin="10,10,0,0" VerticalAlignment="Top" Width="517">
-            <ListView.View>
+            <!--<ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" Width="180"/>
                     <GridViewColumn Header="Prénom" DisplayMemberBinding="{Binding Prenom}" Width="150"/>
                     <GridViewColumn Header="Téléphone" DisplayMemberBinding="{Binding Tel}" Width="150"/>
                 </GridView>
-            </ListView.View>
+            </ListView.View>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBox Text="{Binding Nom}"></TextBox>
+                        <TextBox Text="{Binding Prenom}"></TextBox>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Button Content="Supprimer" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Width="236" Height="48" Click="Button_Click"/>
         <Button Content="Modifier" HorizontalAlignment="Left" Margin="262,379,0,0" VerticalAlignment="Top" Width="265" Height="48" Click="Button_Click_1"/>

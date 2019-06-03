@@ -1,0 +1,30 @@
+﻿<Window x:Class="CoursWpfM2I.ContainerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoursWpfM2I"
+        mc:Ignorable="d"
+        Title="ContainerWindow" Height="450" Width="800">
+    <!--<WrapPanel Orientation="Vertical" Margin="21,24,49.6,22">
+        <Button Content="b1" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+        <Button Content="b2" Width="100"></Button>
+    </WrapPanel>-->
+    <DockPanel LastChildFill="False">
+        <Button Content="top" DockPanel.Dock="Top"></Button>
+        <Button Content="bottom" Height="50" DockPanel.Dock="Bottom"></Button>
+        <Button Content="left" Width="100" DockPanel.Dock="Left"></Button>
+        
+        <Button Content="right" DockPanel.Dock="Right"></Button>
+        
+        <Grid   DockPanel.Dock="Bottom"></Grid>
+    </DockPanel>
+</Window>

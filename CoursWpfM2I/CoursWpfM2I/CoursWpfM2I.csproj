@@ -55,6 +55,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Personne.cs" />
+    <Compile Include="ContainerWindow.xaml.cs">
+      <DependentUpon>ContainerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DetailInfo.xaml.cs">
       <DependentUpon>DetailInfo.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,9 @@
     <Compile Include="ListePersonnes.xaml.cs">
       <DependentUpon>ListePersonnes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SaisirInfo.xaml.cs">
       <DependentUpon>SaisirInfo.xaml</DependentUpon>
     </Compile>
@@ -71,6 +77,10 @@
       <DependentUpon>Taquin.xaml</DependentUpon>
     </Compile>
     <Page Include="calculatrice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContainerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SaisirInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

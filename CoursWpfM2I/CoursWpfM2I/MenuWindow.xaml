@@ -1,0 +1,24 @@
+﻿<Window x:Class="CoursWpfM2I.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoursWpfM2I"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier" >
+                <MenuItem.Icon>
+                    <Image Source="https://img.bfmtv.com/c/630/420/6ea/978bb45ee10aae30b26393fdd58f6.png"></Image>
+                </MenuItem.Icon>
+                <MenuItem Header="_Enregistrer"></MenuItem>
+                <MenuItem Header="_Fermer"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Quitter" Click="Close"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_FEEE"></MenuItem>
+        </Menu>
+        <Grid></Grid>
+    </DockPanel>
+</Window>
