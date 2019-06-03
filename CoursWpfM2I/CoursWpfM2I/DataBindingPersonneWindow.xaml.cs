@@ -1,4 +1,5 @@
 ﻿using CoursWpfM2I.Classes;
+using CoursWpfM2I.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +21,22 @@ namespace CoursWpfM2I
     /// </summary>
     public partial class DataBindingPersonneWindow : Window
     {
+        public DataBindingPersonneViewModel v;
         public DataBindingPersonneWindow()
         {
             InitializeComponent();
-            Personne p = new Personne
+            v = new DataBindingPersonneViewModel();
+            v.personne = new Personne
             {
                 Nom = "toto",
                 Prenom = "tata"
             };
-            //Lier la fenetre à l'objet p 
-            DataContext = p;
+            DataContext = v;
+            bAdd.Click += (sender, e) =>
+            {
+                v.listePersonne.Add(v.personne);
+                v.personne = new Personne();
+            };
         }
     }
 }

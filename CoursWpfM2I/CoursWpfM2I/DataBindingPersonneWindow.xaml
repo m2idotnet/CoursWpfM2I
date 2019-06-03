@@ -7,10 +7,19 @@
         mc:Ignorable="d"
         Title="DataBindingPersonneWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="{Binding Nom}" HorizontalAlignment="Left" Margin="47,210,0,0" VerticalAlignment="Top" Height="42" Width="310"/>
-        <Label Content="{Binding Prenom}" HorizontalAlignment="Left" Margin="47,257,0,0" VerticalAlignment="Top" Height="42" Width="310"/>
-        <TextBox HorizontalAlignment="Left" Margin="47,35,0,0" TextWrapping="Wrap" Text="{Binding Nom, Mode =OneWayToSource}" VerticalAlignment="Top" Height="36" Width="117"/>
-        <TextBox HorizontalAlignment="Left" Margin="47,76,0,0" TextWrapping="Wrap" Text="{Binding Prenom, Mode=OneWayToSource}" VerticalAlignment="Top" Height="36" Width="117"/>
+        <Label Content="{Binding personne.Nom}" HorizontalAlignment="Left" Margin="440,29,0,0" VerticalAlignment="Top" Height="42" Width="310"/>
+        <Label Content="{Binding personne.Prenom}" HorizontalAlignment="Left" Margin="440,76,0,0" VerticalAlignment="Top" Height="42" Width="310"/>
+        <TextBox HorizontalAlignment="Left" Margin="47,35,0,0" TextWrapping="Wrap" Text="{Binding personne.Nom}" VerticalAlignment="Top" Height="36" Width="117"/>
+        <TextBox HorizontalAlignment="Left" Margin="47,76,0,0" TextWrapping="Wrap" Text="{Binding personne.Prenom}" VerticalAlignment="Top" Height="36" Width="117"/>
+        <Button x:Name="bAdd" Content="Ajouter" HorizontalAlignment="Left" Margin="47,117,0,0" VerticalAlignment="Top" Width="117" Height="23"/>
+        <ListView ItemsSource="{Binding listePersonne}" HorizontalAlignment="Left" Height="181" Margin="47,198,0,0" VerticalAlignment="Top" Width="703">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="300" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Prénom" Width="300" DisplayMemberBinding="{Binding Prenom}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

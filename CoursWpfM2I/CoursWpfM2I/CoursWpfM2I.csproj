@@ -79,6 +79,7 @@
     <Compile Include="Taquin.xaml.cs">
       <DependentUpon>Taquin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DataBindingPersonneViewModel.cs" />
     <Page Include="calculatrice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
