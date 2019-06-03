@@ -36,6 +36,7 @@ namespace CoursWpfM2I
             {
                 v.listePersonne.Add(v.personne);
                 v.personne = new Personne();
+                v.Message = "ajouté";
             };
         }
     }
