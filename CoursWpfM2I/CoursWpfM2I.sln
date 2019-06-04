@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoursWpfM2I", "CoursWpfM2I\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoursMVVM", "CoursMVVM\CoursMVVM.csproj", "{5869B240-2E36-46A0-B21F-E3A825B1FE6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMSinglePage", "MVVMSinglePage\MVVMSinglePage.csproj", "{D8DEE2A8-EFB2-4875-B77B-F12B81077BC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5869B240-2E36-46A0-B21F-E3A825B1FE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5869B240-2E36-46A0-B21F-E3A825B1FE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5869B240-2E36-46A0-B21F-E3A825B1FE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8DEE2A8-EFB2-4875-B77B-F12B81077BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DEE2A8-EFB2-4875-B77B-F12B81077BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DEE2A8-EFB2-4875-B77B-F12B81077BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DEE2A8-EFB2-4875-B77B-F12B81077BC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
