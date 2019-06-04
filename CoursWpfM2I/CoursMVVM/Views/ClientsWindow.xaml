@@ -16,7 +16,7 @@
         <Label Content="Tel : " HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
         <TextBox Text="{Binding Tel}" HorizontalAlignment="Left" Height="26" Margin="60,88,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
         <Label Content="{Binding Tel}" HorizontalAlignment="Left" Margin="244,89,0,0" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding listeClients}" HorizontalAlignment="Left" Height="318" Margin="10,164,0,0" VerticalAlignment="Top" Width="418">
+        <ListView SelectedItem="{Binding clientSelected}" ItemsSource="{Binding listeClients}" HorizontalAlignment="Left" Height="318" Margin="10,164,0,0" VerticalAlignment="Top" Width="418">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}"/>
@@ -26,6 +26,7 @@
             </ListView.View>
         </ListView>
         <Button Content="Ajouter" Command="{Binding addCommand}" HorizontalAlignment="Left" Margin="60,119,0,0" VerticalAlignment="Top" Width="140" Height="40"/>
+        <Button Content="Edit" Command="{Binding editCommand}"  HorizontalAlignment="Left" Margin="214,119,0,0" VerticalAlignment="Top" Width="93" Height="40"/>
 
     </Grid>
 </Window>

@@ -14,6 +14,7 @@ namespace CoursMVVM.ViewModels
     public class ClientsViewModel : ViewModelBase
     {
         public Client client { get; set; }
+        public Client clientSelected { get; set; }
         public string Nom
         {
             get
@@ -53,6 +54,7 @@ namespace CoursMVVM.ViewModels
             }
         }
         public ICommand addCommand { get; set; }
+        public ICommand editCommand { get; set; }
 
         public ObservableCollection<Client> listeClients { get; set; }
 
@@ -61,12 +63,32 @@ namespace CoursMVVM.ViewModels
             client = new Client();
             listeClients = new ObservableCollection<Client>();
             addCommand = new RelayCommand(AddClient);
+            editCommand = new RelayCommand(EditClient);
         }
-
+        public void EditClient()
+        {
+            Nom = clientSelected.Nom;
+            Prenom = clientSelected.Prenom;
+            Tel = clientSelected.Tel;
+            client.Id = clientSelected.Id;
+        }
         private void AddClient()
         {
+            //soit un nouveau
             client.Add();
             listeClients.Add(client);
+            //soit un client qui existe à modifier
+            foreach(Client c in listeClients)
+            {
+                if(c.Id == client.Id)
+                {
+
+                }
+            }
+            client = new Client();
+            Nom = "";
+            Prenom = "";
+            Tel = "";
         }
 
     }
