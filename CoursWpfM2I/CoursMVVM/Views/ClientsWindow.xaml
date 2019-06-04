@@ -1,0 +1,31 @@
+﻿<Window x:Class="CoursMVVM.Views.ClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoursMVVM.Views"
+        mc:Ignorable="d"
+        Title="ClientsWindow" Height="521.359" Width="444.661">
+    <Grid>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Nom}" HorizontalAlignment="Left" Height="26" Margin="60,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <Label Content="{Binding Nom}" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prénom : " HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Prenom}" HorizontalAlignment="Left" Height="26" Margin="60,49,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <Label Content="{Binding Prenom}" HorizontalAlignment="Left" Margin="244,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tel : " HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Tel}" HorizontalAlignment="Left" Height="26" Margin="60,88,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <Label Content="{Binding Tel}" HorizontalAlignment="Left" Margin="244,89,0,0" VerticalAlignment="Top"/>
+        <ListView ItemsSource="{Binding listeClients}" HorizontalAlignment="Left" Height="318" Margin="10,164,0,0" VerticalAlignment="Top" Width="418">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom}"/>
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Tel}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Ajouter" Command="{Binding addCommand}" HorizontalAlignment="Left" Margin="60,119,0,0" VerticalAlignment="Top" Width="140" Height="40"/>
+
+    </Grid>
+</Window>
