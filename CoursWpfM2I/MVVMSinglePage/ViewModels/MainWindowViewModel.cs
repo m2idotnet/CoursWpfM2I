@@ -23,6 +23,7 @@ namespace MVVMSinglePage.ViewModels
             maGrille = g;
             listeCommand = new RelayCommand(ListWindow);
             addCommand = new RelayCommand(AddWindow);
+            ListWindow();
         }
 
         public void ListWindow()
