@@ -50,6 +50,7 @@ namespace MVVMSinglePage.ViewModels
         public void AddClient()
         {
             Client.GetClients().Add(client);
+            client = new Client();
             Nom = "";
             Prenom = "";
         }

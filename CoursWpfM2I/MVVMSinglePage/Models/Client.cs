@@ -9,6 +9,7 @@ namespace MVVMSinglePage.Models
 {
     public class Client
     {
+        private static ObservableCollection<Client> StaticClients = new ObservableCollection<Client>() { new Client { Nom = "toto", Prenom = "tata" } };
         private string nom;
         private string prenom;
 
@@ -22,7 +23,7 @@ namespace MVVMSinglePage.Models
 
         public static ObservableCollection<Client> GetClients()
         {
-            return new ObservableCollection<Client>() { new Client { Nom = "toto", Prenom = "tata" } };
+            return StaticClients;
         }
     }
 }

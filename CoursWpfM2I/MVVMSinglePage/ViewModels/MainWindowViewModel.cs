@@ -80,6 +80,7 @@ namespace MVVMSinglePage.ViewModels
             {
                 Text = ""
             };
+            tNom.SetBinding(TextBox.TextProperty, new Binding("Nom"));
             maGrille.Children.Add(tNom);
             Grid.SetColumn(tNom, 1);
             Grid.SetRow(tNom, 0);
@@ -87,6 +88,7 @@ namespace MVVMSinglePage.ViewModels
             {
                 Text = ""
             };
+            tPrenom.SetBinding(TextBox.TextProperty, new Binding("Prenom"));
             maGrille.Children.Add(tPrenom);
             Grid.SetColumn(tPrenom, 1);
             Grid.SetRow(tPrenom, 1);
