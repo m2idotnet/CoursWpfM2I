@@ -1,0 +1,20 @@
+﻿<Window x:Class="CoursWpfM2I.DataGridWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoursWpfM2I"
+        mc:Ignorable="d"
+        Title="DataGridWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" x:Name="maDataGrid" HorizontalAlignment="Left" Height="357" Margin="26,53,0,0" VerticalAlignment="Top" Width="758">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom client" Binding="{Binding Nom}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Prénom client" Binding="{Binding Prenom}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Marié ?" Binding="{Binding Marie}"></DataGridCheckBoxColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Voir la liste"  HorizontalAlignment="Left" Margin="80,21,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>

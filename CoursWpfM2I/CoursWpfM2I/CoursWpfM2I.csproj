@@ -61,6 +61,9 @@
     <Compile Include="DataBindingPersonneWindow.xaml.cs">
       <DependentUpon>DataBindingPersonneWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataGridWindow.xaml.cs">
+      <DependentUpon>DataGridWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DetailInfo.xaml.cs">
       <DependentUpon>DetailInfo.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataBindingPersonneWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGridWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

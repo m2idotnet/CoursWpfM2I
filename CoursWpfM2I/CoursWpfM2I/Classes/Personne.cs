@@ -12,10 +12,12 @@ namespace CoursWpfM2I.Classes
         private string nom;
         private string prenom;
         private string tel;
+        private bool marie;
 
         public string Nom { get => nom; set { nom = value; StartNotify("Nom"); } }
         public string Prenom { get => prenom; set { prenom = value; StartNotify("Prenom"); } }
         public string Tel { get => tel; set => tel = value; }
+        public bool Marie { get => marie; set => marie = value; }
 
         public Personne()
         {
